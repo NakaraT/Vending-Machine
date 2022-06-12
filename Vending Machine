@@ -1,0 +1,461 @@
+from random import randint
+
+
+#ADMIN PANEL - 150403
+#ADMIN PANEL - 150403
+#ADMIN PANEL - 150403
+#ADMIN PANEL - 150403
+
+
+Drinks = ['Байкал', 'Квас', 'Холодный чай', 'Вода', 'Ананасовый сок']
+Price_D = [67, 53, 62, 40, 78]
+Foods = ['Шоколад *Слава*', 'Чипсы *Московский КАРТОФЕЛЬ*', 'Тульский пряник', 'Кириешки', 'Шоколад *Степ*']
+Price_F = [89, 65, 45, 75, 44]
+Amount = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+mons = [50, 50, 25, 25, 15, 10]
+nomi = [1,  2,  5,  10, 50, 100]
+
+
+def panel(Amount):
+    while True:
+        print("\n...АДМИН ПАНЕЛЬ...\n\t1) Узнать кол-во товара\n\t2) Пополнить товар\n\t3) Узнать кол-во монет\n\t"
+              "4) Изменить цену на товар\n\t5) Изменить товар\n\t6) Снять/Пополнить деньги\n\t7) Вернуться в обычный режим")
+        a = int(input())
+        if a == 1:
+            print("НАПИТКИ:")
+            for i in range(0, 5):
+                print("\t" + Drinks[i] + " - " + str(Amount[i]))
+            print("ЕДА:")
+            for j in range(0, 5):
+                print("\t" + Foods[j] + " - " + str(Amount[j+5]))
+
+        elif a == 2:
+            while True:
+                print("\t1) Пополнить весь товар до максимума\n\t2) Пополнить все Напитки\n\t3) Пополнить всю Еду\n\t"
+                      "4) Пополнить определённый товар из категории *НАПИТКИ*"
+                      "\n\t5) Пополнить определённый товар из категории *ЕДА*\n\t6) Назад")
+                b = int(input())
+                if b == 1:
+                    Amount = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+                    print("Готово!")
+                if b == 2:
+                    for i in range(0, 5):
+                        Amount[i] = 3
+                    print("Готово!")
+                if b == 3:
+                    for j in range(5, 10):
+                        Amount[j] = 3
+                    print("Готово!")
+                if b == 4:
+                    for k in range(0, 5):
+                        print(str(k+1) + ") " + str(Drinks[k]))
+                    d = int(input())
+                    if d == 1:
+                        Amount[0] = 3
+                    elif d == 2:
+                        Amount[1] = 3
+                    elif d == 3:
+                        Amount[2] = 3
+                    elif d == 4:
+                        Amount[3] = 3
+                    elif d == 5:
+                        Amount[4] = 3
+                    print("Готово!")
+                if b == 5:
+                    for o in range(0, 5):
+                        print(str(o+1) + ") " + str(Foods[o]))
+                    d = int(input())
+                    if d == 1:
+                        Amount[5] = 3
+                    elif d == 2:
+                        Amount[6] = 3
+                    elif d == 3:
+                        Amount[7] = 3
+                    elif d == 4:
+                        Amount[8] = 3
+                    elif d == 5:
+                        Amount[9] = 3
+                    print("Готово!")
+                if b == 6:
+                    break
+
+        elif a == 3:
+            for y in range(6):
+                print(str(nomi[y]) + " - " + str(mons[y]))
+
+        elif a == 4:
+            while True:
+                print("\t1) Изменить цену на товар из категории *НАПИТКИ*"
+                      "\n\t2) Изменить цену на товар из категории *ЕДА*\n\t3) Назад")
+                b = int(input())
+                if b == 1:
+                    for i in range(0, 5):
+                        print(str(i + 1) + ") " + str(Drinks[i]))
+                    e = int(input())
+                    if e == 1:
+                        print(Drinks[e - 1] + " - Цена: " + str(Price_D[e-1]) + "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e-1] = m
+                    elif e == 2:
+                        print(Drinks[e - 1] + " - Цена: " + str(Price_D[e-1])+ "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 3:
+                        print(Drinks[e - 1] + " - Цена: " + str(Price_D[e-1])+ "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 4:
+                        print(Drinks[e - 1] + " - Цена: " + str(Price_D[e-1])+ "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 5:
+                        print(Drinks[e - 1] + " - Цена: " + str(Price_D[e-1])+ "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    print("Готово!")
+                if b == 2:
+                    for j in range(0, 5):
+                        print(str(j + 1) + ") " + str(Foods[j]))
+                    e = int(input())
+                    if e == 1:
+                        print(Foods[e - 1] + " - Цена: " + str(Price_F[e - 1]) + "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 2:
+                        print(Foods[e - 1] + " - Цена: " + str(Price_F[e - 1]) + "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 3:
+                        print(Foods[e - 1] + " - Цена: " + str(Price_F[e - 1]) + "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 4:
+                        print(Foods[e - 1] + " - Цена: " + str(Price_F[e - 1]) + "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    elif e == 5:
+                        print(Foods[e - 1] + " - Цена: " + str(Price_F[e - 1]) + "\nУкажите новую цену: ")
+                        m = int(input())
+                        Price_D[e - 1] = m
+                    print("Готово!")
+                if b == 3:
+                    break
+
+        elif a == 5:
+            while True:
+                print("\t1) Изменить товар из категории *НАПИТКИ*"
+                      "\n\t2) Изменить товар из категории *ЕДА*\n\t3) Назад")
+                b = int(input())
+                if b == 1:
+                    for i in range(0, 5):
+                        print(str(i + 1) + ") " + str(Drinks[i]))
+                    e = int(input())
+                    if e == 1:
+                        print(Drinks[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Drinks[e - 1] = m
+                    elif e == 2:
+                        print(Drinks[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Drinks[e - 1] = m
+                    elif e == 3:
+                        print(Drinks[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Drinks[e - 1] = m
+                    elif e == 4:
+                        print(Drinks[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Drinks[e - 1] = m
+                    elif e == 5:
+                        print(Drinks[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Drinks[e - 1] = m
+                    print("Готово!")
+
+                if b == 2:
+                    for j in range(0, 5):
+                        print(str(j + 1) + ") " + str(Foods[j]))
+                    e = int(input())
+                    if e == 1:
+                        print(Foods[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Foods[e - 1] = m
+                    elif e == 2:
+                        print(Foods[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Foods[e - 1] = m
+                    elif e == 3:
+                        print(Foods[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Foods[e - 1] = m
+                    elif e == 4:
+                        print(Foods[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Foods[e - 1] = m
+                    elif e == 5:
+                        print(Foods[e - 1] + "\nУкажите новый товар: ")
+                        m = str(input())
+                        Foods[e - 1] = m
+                    print("Готово!")
+                if b == 3:
+                    break
+
+        elif a == 6:
+            while True:
+                print("1) Снять\n2) Пополнить\n3) Назад")
+                ac = int(input())
+                if ac == 1:
+                    while True:
+                        for y in range(6):
+                            print(str(y + 1) + ") " + str(nomi[y]) + " - " + str(mons[y]))
+                        print("7) Назад")
+                        f = int(input())
+                        if f == 1:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            if m > mons[f - 1]:
+                                print("Нельзя снять больше, чем есть!")
+                            else:
+                                mons[f - 1] = mons[f - 1] - m
+                        elif f == 2:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            if m > mons[f - 1]:
+                                print("Нельзя снять больше, чем есть!")
+                            else:
+                                mons[f - 1] = mons[f - 1] - m
+                        elif f == 3:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            if m > mons[f - 1]:
+                                print("Нельзя снять больше, чем есть!")
+                            else:
+                                mons[f - 1] = mons[f - 1] - m
+                        elif f == 4:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            if m > mons[f - 1]:
+                                print("Нельзя снять больше, чем есть!")
+                            else:
+                                mons[f - 1] = mons[f - 1] - m
+                        elif f == 5:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            if m > mons[f - 1]:
+                                print("Нельзя снять больше, чем есть!")
+                            else:
+                                mons[f - 1] = mons[f - 1] - m
+                        elif f == 6:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            if m > mons[f - 1]:
+                                print("Нельзя снять больше, чем есть!")
+                            else:
+                                mons[f - 1] = mons[f - 1] - m
+                        else:
+                            break
+                elif ac == 2:
+                    while True:
+                        for y in range(6):
+                            print(str(y + 1) + ") " + str(nomi[y]) + " - " + str(mons[y]))
+                        print("7) Назад")
+                        f = int(input())
+                        if f == 1:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            mons[f - 1] = mons[f - 1] + m
+                        elif f == 2:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            mons[f - 1] = mons[f - 1] + m
+                        elif f == 3:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            mons[f - 1] = mons[f - 1] + m
+                        elif f == 4:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            mons[f - 1] = mons[f - 1] + m
+                        elif f == 5:
+                            print(str(nomi[f - 1]) + " - " + str(mons[f - 1]) + "\nУкажите кол-во: ")
+                            m = int(input())
+                            mons[f - 1] = mons[f - 1] + m
+                        elif f == 6:
+                            m = int(input())
+                            mons[f - 1] = mons[f - 1] + m
+                        else:
+                            break
+                else:
+                    break
+
+        else:
+            print("Выход в Обычный Режим")
+            break
+
+
+def money(Name, Price, Amount):
+    print("\nВыберите тип оплаты:\n\t1) Карта\n\t2) Наличные")
+    type = int(input())
+    if type < 2:
+        karta = randint(1, 2)
+        if karta == 1:
+            print("Недостаточно средств...(")
+        else:
+            if Amount[pos - 1] > 0:
+                Amount[pos - 1] = int(Amount[pos - 1]) - 1
+                print(Amount)
+                print("Оплата прошла успешно.")
+            else:
+                print("Мы не можем выдать товар, которого нет...(")
+    else:
+        print("Вставьте купюру или монету")
+        print("\t1) 1\n\t2) 2\n\t3) 5\n\t4) 10\n\t5) 50\n\t6) 100\n\t7) Баланс\n\t8) Завершить")
+        summa = 0
+        while True:
+            kup = int(input())
+            if kup == 1:
+                summa = summa + 1
+                mons[0] = mons[0] + 1
+            elif kup == 2:
+                summa = summa + 2
+                mons[1] = mons[1] + 1
+            elif kup == 3:
+                summa = summa + 5
+                mons[2] = mons[2] + 1
+            elif kup == 4:
+                summa = summa + 10
+                mons[3] = mons[3] + 1
+            elif kup == 5:
+                summa = summa + 50
+                mons[4] = mons[4] + 1
+            elif kup == 6:
+                summa = summa + 100
+                mons[5] = mons[5] + 1
+            elif kup == 7:
+                if summa == 0:
+                    print("Ваш баланс: 0")
+                else:
+                    print("Ваш баланс: " + str(summa))
+            else:
+                break
+        if Price > summa:
+            print("Нехватка средств.\n")
+
+        else:
+            if Amount[pos - 1] > 0:
+                Amount[pos - 1] = int(Amount[pos - 1]) - 1
+                print("Оплата прошла успешно.")
+                print(Name + " успешно выдан.")
+                sdacha = summa - Price
+                sd = []
+                while True:
+                    if sdacha >= 100:
+                        if mons[5] > 0:
+                            mons[5] = mons[5] - 1
+                            sdacha = sdacha - 100
+                            sd.append('100')
+                        elif mons[4] > 1:
+                            mons[4] = mons[4] - 2
+                            sdacha = sdacha - 100
+                            sd.append('50', '50')
+                        elif mons[3] > 9:
+                            mons[3] = mons[3] - 10
+                            sdacha = sdacha - 100
+                            sd.append('10', '10', '10', '10', '10', '10', '10', '10', '10', '10')
+                        else:
+                            print("Нехватка средств для выдачи сдачи.")
+                            break
+
+                    elif sdacha >= 50:
+                        if mons[4] > 0:
+                            mons[4] = mons[4] - 1
+                            sdacha = sdacha - 50
+                            sd.append('50')
+                        elif mons[3] > 4:
+                            mons[3] = mons[3] - 5
+                            sdacha = sdacha - 50
+                            sd.append('10', '10', '10', '10', '10')
+                        else:
+                            print("Нехватка средств для выдачи сдачи.")
+                            break
+
+                    elif sdacha >= 10:
+                        if mons[3] > 0:
+                            mons[3] = mons[3] - 1
+                            sdacha = sdacha - 10
+                            sd.append('10')
+                        elif mons[2] > 1:
+                            mons[2] = mons[2] - 10
+                            sdacha = sdacha - 10
+                            sd.append('5', '5')
+                        else:
+                            print("Нехватка средств для выдачи сдачи.")
+                            break
+
+                    elif sdacha >= 5:
+                        if mons[2] > 0:
+                            mons[2] = mons[2] - 1
+                            sdacha = sdacha - 5
+                            sd.append('5')
+                        elif mons[1] > 1 and mons[0] > 0:
+                            mons[1] = mons[1] - 2
+                            mons[0] = mons[0] - 1
+                            sdacha = sdacha - 5
+                            sd.append('2', '2', '1')
+                        else:
+                            print("Нехватка средств для выдачи сдачи.")
+                            break
+
+                    elif sdacha >= 2:
+                        if mons[1] > 0:
+                            mons[1] = mons[1] - 1
+                            sdacha = sdacha - 2
+                            sd.append('2')
+                        elif mons[0] > 1:
+                            mons[0] = mons[0] - 2
+                            sdacha = sdacha - 2
+                            sd.append('1', '1')
+                        else:
+                            print("Нехватка средств для выдачи сдачи.")
+                            break
+
+                    elif sdacha >= 1:
+                        if mons[0] > 0:
+                            sdacha = sdacha - 1
+                            mons[0] = mons[0] - 1
+                            sd.append('1')
+                        else:
+                            print("Нехватка средств для выдачи сдачи.")
+                            break
+
+
+                    else:
+                        break
+                print("Кол-во товара - " + str(Amount))
+                print("Сдача - " + str(sd))
+                print("Монетки - " + str(mons))
+            else:
+                print("Мы не можем выдать товар, которого нет...(")
+
+
+if __name__ == '__main__':
+    while True:
+        print("\nВыберите товар из списка:\n\n" + "\tНАПИТКИ:")
+        for i in range(5):
+            print("\t" + "\t" + str(i+1) + ") " + Drinks[i] + " : " + str(Price_D[i]) + " (руб)")
+        print("\n" + "\tЕДА:")
+        for i in range(5):
+            print("\t" + "\t" + str(i+6) + ") " + Foods[i] + " : " + str(Price_F[i]) + " (руб)")
+        print("\nВведите номер позиции:")
+        pos = int(input())
+        if pos > 0 and pos < 6:
+            print("Продукт - " + Drinks[pos - 1] + "\nЦена - " + str(Price_D[pos - 1]))
+            money(Drinks[pos - 1], Price_D[pos - 1], Amount)
+        elif pos > 5 and pos < 11:
+            pos = pos
+            print("Продукт - " + Foods[pos - 6] + "\nЦена - " + str(Price_F[pos - 6]))
+            money(Foods[pos - 6], Price_F[pos - 6], Amount)
+        elif pos == 150403:
+            panel(Amount)
+        else:
+            print("\nНеверно указан номер продукции.")
